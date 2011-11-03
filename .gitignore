@@ -2,7 +2,6 @@ app/cache
 app/logs
 app/bootstrap*
 app/phpunit.xml
-vendor
 web/bundles
 web/uploads
 web/media
