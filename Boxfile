@@ -10,8 +10,8 @@ web1:
   ## WEB SPECIFIC SETTINGS
   ################################################
   document_root: web
-  default_gateway: app.php
-  index_list: [app.php]
+  default_gateway: check.php
+  index_list: [check.php]
 
   ################################################
   ## PHP SPECIFIC SETTINGS
