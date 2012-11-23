@@ -6,7 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Validator\Constraints as Assert;
 use Gedmo\Mapping\Annotation as Gedmo;
-use Gedmo\Translator\ObjectTranslator;
+use Gedmo\Translator\TranslationProxy;
 
 /**
  * Kinosklad\Bundle\MainBundle\Entity\Genre
@@ -138,14 +138,15 @@ class Genre
     /** @ORM\PrePersist */
     public function translate($locale = null)
     {
-        if (null === $this->translator) {
-            $this->translator = new ObjectTranslator($this,
-                array('name'),
-                'Kinosklad\Bundle\MainBundle\Entity\GenreTranslation',
-                $this->translations
-            );
+        if (null === $locale) {
+            return $this;
         }
 
-        return $this->translator->translate($locale);
+        return new TranslationProxy($this,
+            $locale,
+            array('name'),
+            'Kinosklad\Bundle\MainBundle\Entity\GenreTranslation',
+            $this->translations
+        );
     }
 }
