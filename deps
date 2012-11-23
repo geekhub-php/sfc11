@@ -4,7 +4,7 @@
 
 [Filesystem]
     git=http://github.com/symfony/Filesystem.git
-    target=/symfony/src/Symfony/Component
+    target=/symfony/src/Symfony/Component/Filesystem
 
 [twig]
     git=http://github.com/fabpot/Twig.git
