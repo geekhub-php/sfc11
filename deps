@@ -2,6 +2,10 @@
     git=http://github.com/symfony/symfony.git
     version=v2.0.4
 
+[Filesystem]
+    git=http://github.com/symfony/Filesystem.git
+    target=/symfony/src/Symfony/Component
+
 [twig]
     git=http://github.com/fabpot/Twig.git
     version=v1.1.2
